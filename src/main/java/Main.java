@@ -1,13 +1,10 @@
-import java.net.URL;
 import java.sql.*;
 import java.util.Scanner;
 
 public class Main
 {
-
     public static void main(String[] args) throws InterruptedException, SQLException
     {
-        DBWorker worker = new DBWorker();
         ATM atm = new ATM();
         Scanner scanner = new Scanner(System.in);
 
@@ -18,7 +15,7 @@ public class Main
         switch (regOrAuthorize)
         {
             case 1:
-                atm.registration();
+                atm.registerWithUserManager();
                 break;
             case 2:
             {
@@ -26,7 +23,7 @@ public class Main
                 String checkLogin = scanner.nextLine();
                 System.out.println("Введите пароль: ");
                 String checkPassword = scanner.nextLine();
-                if(atm.authorization(checkLogin, checkPassword))
+                if(atm.authorize(checkLogin, checkPassword))
                 {
                     System.out.println("Вы успешно авторизовались!");
                     atm.showMenu(checkLogin);

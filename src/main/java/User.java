@@ -1,8 +1,6 @@
 public class User
 {
-    private int id;
-    float balance;
-    private String userName, login, password;
+    private final String userName, login, password;
 
     public User(String userName, String login, String password)
     {
