@@ -7,6 +7,7 @@ public class Main
     {
         ATM atm = new ATM();
         Scanner scanner = new Scanner(System.in);
+        ATMFunctional atmF = new ATMFunctional();
 
         System.out.println("1.Sign in\n2.Log in");
         byte regOrAuthorize = scanner.nextByte();
@@ -26,7 +27,7 @@ public class Main
                 if(atm.authorize(checkLogin, checkPassword))
                 {
                     System.out.println("Вы успешно авторизовались!");
-                    atm.showMenu(checkLogin);
+                    atmF.showMenu(checkLogin);
                 }
                 else
                 {
